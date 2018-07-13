@@ -2,16 +2,18 @@
     <div>
         <HomeHead/>
         <HomeBanner/>
+        <GuessLike/>
     </div>
 </template>
 <script>
 import HomeHead from "./home/HomeHead"
 import HomeBanner from "./home/HomeBanner"
-import Axios from "axios"
+import GuessLike from "./home/GuessLike"
     export default {
         components: {
             HomeHead,
-            HomeBanner
+            HomeBanner,
+            GuessLike
         },
         data () {
             return {
@@ -20,7 +22,7 @@ import Axios from "axios"
         },
         created() {
             new Promise((resolve, reject) => {
-                Axios.get("/api/homepage/categorylist").then((result) => {
+                this.$axios.get("/api/homepage/categorylist").then((result) => {
                     console.log(result)
                 }).catch((err) => {
                     console.log(err)

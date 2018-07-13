@@ -8,8 +8,10 @@
             <span>输入商家/品类/商圈</span>
         </div>
         <div class="nav-my">
-            <span>深圳</span>
-            <span>我的</span>
+            <router-link to="/login">
+                <span>深圳</span>
+                <span>我的</span>
+            </router-link>
         </div>
     </div>
 </template>
@@ -33,6 +35,7 @@
         width:20%;
         float:left;
         height: 100%;
+        text-align: center;
     }
     .nav-city span{
         display: block;
@@ -63,6 +66,6 @@
         height: 100%;
         font-size: 12px;
         color:#fff;
-
+        text-align: center;
     }
 </style>

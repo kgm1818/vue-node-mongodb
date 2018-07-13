@@ -1,5 +1,6 @@
 const express = require("express");
 const Category = require('../models/Categorylist');
+const DealList = require('../models/DealList');
 // 创建路由
 const router = express.Router();
 // 首页分类
@@ -38,5 +39,21 @@ router.get('/homepage/categorylist', (req,res,next) => {
     //         console.log('数据保存失败');
     //     }
     // })
+});
+// 列表
+router.get("/index/DealList", (req, res, next) => {
+    let responseData = {};
+    try {
+        DealList.find().then((result) => {
+            responseData.status = 0;
+            responseData.data = result;
+            responseData.msg = "执行成功";
+            res.json(responseData);
+        })
+    }catch (err){
+        responseData.status = 1;
+        responseData.msg = "请求失败";
+        res.json(responseData);
+    }
 })
 module.exports = router;

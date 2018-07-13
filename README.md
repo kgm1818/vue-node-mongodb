@@ -24,3 +24,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 // api
 首页分类列表
 api/homepage/categorylist
+// 列表
+api/index/DealList
